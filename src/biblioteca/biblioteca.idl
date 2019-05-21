@@ -1,0 +1,53 @@
+module BibliotecaApp {
+    interface autor {
+        boolean insertarAutor( in wstring au_autor);
+        wstring consultarAutor(in long au_idautor);
+        boolean actualizarAutor(in long au_idautor,in wstring au_autor);
+        boolean eliminarAutor(in long au_idautor);
+        wstring listarAutor();
+        oneway void shutdown();
+    };
+    interface categoria {				
+        boolean insertarCategoria( in wstring ca_categoria);	
+        wstring consultarCategoria(in long id_categoria);	
+        boolean actualizarCategoria(in long id_categoria,in wstring ca_categoria);
+        boolean eliminarcategoria(in long id_categoria);	
+        wstring listarCategoria();			
+        oneway void shutdown();			
+    };					
+
+    interface editorial {				
+        boolean insertarEditorial( in wstring ed_editorial);				
+        wstring consultarEditorial(in long id_editorial);				
+        boolean actualizarEditorial(in long id_editorial,in wstring ed_editorial);				
+        boolean eliminarEditorial(in long id_editorial);				
+        wstring listarEditorial();				
+        oneway void shutdown();				
+    };				
+
+    interface lector {				
+        boolean insertarLector(in wstring nombre,in long celular,in wstring observacion);				
+        wstring consultarLector(in long dnilector);				
+        boolean actualizarLector(in long dnilector,in wstring nombre,in long celular,in wstring observacion);				
+        boolean eliminarLector(in long dnilector);				
+        wstring listarLector();				
+        oneway void shutdown();				
+    };	
+    interface alquiler {				
+        boolean insertarAlquiler(in long id_lector,in long id_libro);				
+        wstring consultarAlquiler(in long id_alquiler);				
+        boolean actualizarAlquiler(in long id_alquiler, in long id_lector,in long id_libro);				
+        boolean eliminarAlquiler(in long id_alquiler);				
+        wstring listarAlquiler();				
+        oneway void shutdown();				
+    };
+    interface libro {				
+        boolean insertarLibro(in wstring  titulo, in long autor,in long categoria, in long editorial, in long paginas, in wstring descripcion,in wstring portada);				
+        wstring consultarLibro(in long asin);				
+        boolean actualizarLibro(in long asin,in wstring  titulo, in long autor,in long categoria, in long editorial, in long paginas, in wstring descripcion,in wstring portada);				
+        boolean eliminarLibro(in long asin);				
+        wstring listarLibro();				
+        oneway void shutdown();				
+    };					
+
+};
