@@ -83,7 +83,7 @@ public class Editorial extends BibliotecaApp.editorialPOA {
     public boolean eliminarEditorial(int id_editorial) {
         boolean resultado = false;
         try {
-            String sentenciaSql = "DELETE FROM categoria WHERE id_categoria = " + id_editorial;
+            String sentenciaSql = "DELETE FROM categoria WHERE id_editorial = " + id_editorial;
             conectar.conectar();
             Statement st = conectar.conex.createStatement();
             int valor = st.executeUpdate(sentenciaSql);
