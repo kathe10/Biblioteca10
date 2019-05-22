@@ -7,13 +7,14 @@ package ClassAndForm;
     import java.sql.ResultSet;
     import javax.swing.JOptionPane;
     import javax.swing.table.DefaultTableModel;
+
 public class frmLibro extends javax.swing.JFrame {
 
     private DefaultTableModel modeloLibro;
     public frmLibro() {
         modeloLibro = new DefaultTableModel(null, getColumn());
         initComponents();
-        this.setLocationRelativeTo(null);
+        
         cargarTabla();
     }
     private String[] getColumn() {

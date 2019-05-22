@@ -83,6 +83,7 @@ public class Lector extends BibliotecaApp.lectorPOA{
        boolean resultado = false;
         try {
             String sentenciaSql = "DELETE FROM lector WHERE dnilector = " + dnilector;
+            
             conectar.conectar();
             Statement st = conectar.conex.createStatement();
             int valor = st.executeUpdate(sentenciaSql);

@@ -27,7 +27,7 @@ public class frmAutor extends javax.swing.JFrame {
     }
     
     private String[] getColumn(){
-    String columnas[] = new String[]{ "au_idautor", "au_autor"};
+    String columnas[] = new String[]{ "id_idautor", "au_autor"};
     return columnas;
     }
     

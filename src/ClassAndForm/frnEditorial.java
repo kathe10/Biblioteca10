@@ -15,7 +15,7 @@ public class frnEditorial extends javax.swing.JFrame {
     public frnEditorial() {
         modeloEditorial = new DefaultTableModel(null, getColumn());
         initComponents();
-        this.setLocationRelativeTo(null);
+        
         cargarTabla();
     }
      private String[] getColumn() {

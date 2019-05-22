@@ -8,21 +8,21 @@ package ClassAndForm;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 public class frmLector extends javax.swing.JFrame {
 
     private DefaultTableModel modeloLector;
     public frmLector() {
         modeloLector = new DefaultTableModel(null, getColumn());
         initComponents();
-        this.setLocationRelativeTo(null);
+        
         
        
-        setLocationRelativeTo(null);
-        setResizable(false);
+       
         cargarTabla();
     }
          private String[] getColumn() {
-        String columnas[] = new String[]{"Id", "Nombre del Producto"};
+        String columnas[] = new String[]{"Id", "Nombre","Celular", "Observación"};
         return columnas;
     }
 
@@ -130,6 +130,21 @@ public class frmLector extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tblLectorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLectorMouseClicked
+         int seleccion=tblLector.rowAtPoint(evt.getPoint());
+        txtDNI.setText(String.valueOf(tblLector.getValueAt(seleccion,0)));
+        txtNombre.setText(String.valueOf(tblLector.getValueAt(seleccion,1)));
+        txtCelular.setText(String.valueOf(tblLector.getValueAt(seleccion,2)));
+        txtObservacion.setText(String.valueOf(tblLector.getValueAt(seleccion,3)));
+        
+        
+       
+    }//GEN-LAST:event_tblLectorMouseClicked
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         Lector objLector= new Lector ();
         int celular= Integer.parseInt(txtCelular.getText());
@@ -157,9 +172,9 @@ public class frmLector extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         Lector objLector = new Lector();
-         int dniLector = Integer.parseInt(txtDNI.getText());
-         boolean resultado = objLector.eliminarLector(dniLector);
-         if (resultado) {
+        int dniLector = Integer.parseInt(txtDNI.getText());
+        boolean resultado = objLector.eliminarLector(dniLector);
+        if (resultado) {
             JOptionPane.showMessageDialog(null, "Se elimino Correctamente");
             modeloLector.setNumRows(0);
 
@@ -168,30 +183,14 @@ public class frmLector extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Ocurrio un error en el Sistema");
         }
-         
-         // *** Limpio los Campos ***
+
+        // *** Limpio los Campos ***
         txtDNI.setText("");
         txtNombre.setText("");
         txtNombre.setText("");
         txtObservacion.setText("");
-        
-        
+
     }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void tblLectorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLectorMouseClicked
-         int seleccion=tblLector.rowAtPoint(evt.getPoint());
-        txtDNI.setText(String.valueOf(tblLector.getValueAt(seleccion,0)));
-        txtNombre.setText(String.valueOf(tblLector.getValueAt(seleccion,1)));
-        txtCelular.setText(String.valueOf(tblLector.getValueAt(seleccion,2)));
-        txtObservacion.setText(String.valueOf(tblLector.getValueAt(seleccion,3)));
-        
-        
-       
-    }//GEN-LAST:event_tblLectorMouseClicked
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-       dispose();
-    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
