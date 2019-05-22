@@ -22,6 +22,7 @@ public class Autor extends BibliotecaApp.autorPOA {
     @Override
     public boolean insertarAutor(String au_autor) {
        boolean resultado = false;
+       
         try {
             String sentenciaSql = "insert into autor (au_autor)"
                     + "values('"+ au_autor +"')";

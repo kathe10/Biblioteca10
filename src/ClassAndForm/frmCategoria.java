@@ -15,6 +15,10 @@ public class frmCategoria extends javax.swing.JFrame {
     public frmCategoria() {
         modeloCategoria = new DefaultTableModel(null, getColumn());
         initComponents();
+       
+        setLocationRelativeTo(null);
+        setResizable(false);
+        this.setLocationRelativeTo(null);
         cargarCategoria();
     }
     private String[] getColumn() {
@@ -62,13 +66,18 @@ public class frmCategoria extends javax.swing.JFrame {
         txtNombreCategoria = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DokChampa", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Goudy Old Style", 1, 48)); // NOI18N
         jLabel1.setText("Categoria");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
         jLabel2.setText("Código Categoria:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
 
         jLabel3.setText("Nombre Categoria");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
 
         tblCategoria.setModel(modeloCategoria);
         tblCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -78,80 +87,36 @@ public class frmCategoria extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblCategoria);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 350, 190));
+
+        btnGuardarCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user.png"))); // NOI18N
         btnGuardarCategoria.setText("GUARDAR");
         btnGuardarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarCategoriaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnGuardarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, -1, -1));
 
+        btnEliminarCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/message.png"))); // NOI18N
         btnEliminarCategoria.setText("ELIMINAR");
         btnEliminarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarCategoriaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnEliminarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
 
-        btnSalirCategoria.setText("SALIR");
+        btnSalirCategoria.setBackground(new java.awt.Color(255, 153, 153));
+        btnSalirCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cross-remove-sign.png"))); // NOI18N
         btnSalirCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirCategoriaActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(19, 19, 19))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCodCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                    .addComponent(txtNombreCategoria))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnGuardarCategoria)
-                        .addGap(53, 53, 53)
-                        .addComponent(btnEliminarCategoria)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalirCategoria))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtCodCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(59, 59, 59)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(txtNombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardarCategoria)
-                    .addComponent(btnEliminarCategoria)
-                    .addComponent(btnSalirCategoria))
-                .addGap(16, 16, 16))
-        );
+        getContentPane().add(btnSalirCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 40, 40));
+        getContentPane().add(txtCodCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 82, -1));
+        getContentPane().add(txtNombreCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 82, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

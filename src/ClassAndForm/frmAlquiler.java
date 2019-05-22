@@ -16,6 +16,7 @@ public class frmAlquiler extends javax.swing.JFrame {
     public frmAlquiler() {
          modeloAlquiler = new DefaultTableModel(null, getColumn());
         initComponents();
+        this.setLocationRelativeTo(null);
         cargarAlquiler();
     }
         private String[] getColumn(){
@@ -49,9 +50,7 @@ public class frmAlquiler extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAlquiler = new javax.swing.JTable();
-        btnGuardar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnEliminar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -61,6 +60,8 @@ public class frmAlquiler extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblAlquiler.setModel(modeloAlquiler);
         tblAlquiler.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -70,138 +71,35 @@ public class frmAlquiler extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblAlquiler);
 
-        btnGuardar.setBackground(new java.awt.Color(51, 102, 255));
-        btnGuardar.setText("GURDAR");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 270, 140));
 
+        jLabel1.setFont(new java.awt.Font("Goudy Old Style", 1, 36)); // NOI18N
         jLabel1.setText("REGISTRO AQUILER");
-
-        btnEliminar.setBackground(new java.awt.Color(0, 102, 255));
-        btnEliminar.setText("ELIMINAR");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 372, -1));
 
         jLabel2.setText("ID_ALQUILER");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         jLabel3.setText("ID_LECTOR");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
 
         jLabel4.setText("ID_LIBRO");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        getContentPane().add(txt_id_Alquiler, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 109, -1));
+        getContentPane().add(txt_id_Libro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 109, -1));
+        getContentPane().add(txt_id_lector, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 109, -1));
 
-        btnSalir.setBackground(new java.awt.Color(0, 102, 255));
+        btnSalir.setBackground(new java.awt.Color(255, 255, 0));
         btnSalir.setText("SALIR");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(169, 169, 169)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_id_lector)
-                    .addComponent(txt_id_Alquiler)
-                    .addComponent(txt_id_Libro, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnGuardar)
-                        .addGap(67, 67, 67)
-                        .addComponent(btnEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalir)))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_id_Alquiler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(67, 67, 67)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_id_lector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(73, 73, 73)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_id_Libro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSalir)
-                            .addComponent(btnEliminar)
-                            .addComponent(btnGuardar))))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
-  
-        Alquiler objAlquiler= new Alquiler ();
-        
-        int id_Lector= Integer.parseInt(txt_id_lector.getText());
-        int id_Libro= Integer.parseInt(txt_id_Libro.getText());
-
-        boolean resultado=objAlquiler.insertarAlquiler( id_Lector,id_Libro);
-
-        if (resultado){
-
-            JOptionPane.showMessageDialog(null,"Se inserto correctamente");
-            modeloAlquiler.setNumRows(0);
-            cargarAlquiler();
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"Ocurrio un error");
-        }
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-          Autor objAlquiler=new Autor();
-        
-        int au_idautor=Integer.parseInt(txt_id_Alquiler.getText());
-        boolean resultado=objAlquiler.eliminarAutor(au_idautor);
-        if (resultado) {
-            JOptionPane.showMessageDialog(null,"Se inserto correctamente");
-            modeloAlquiler.setNumRows(0);
-            cargarAlquiler();
-        }else{
-            JOptionPane.showMessageDialog(null,"Ocurrio un error");
-        }
-        txt_id_Alquiler.setText("");
-        txt_id_Libro.setText("");
-        txt_id_lector.setText("");
-    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
        dispose();
@@ -252,8 +150,6 @@ public class frmAlquiler extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -19,6 +19,10 @@ public class frmAutor extends javax.swing.JFrame {
         
         modeloAuotr = new DefaultTableModel(null, getColumn());
         initComponents();
+        
+         
+        
+        
         cargarAutor();
     }
     
@@ -41,7 +45,8 @@ public class frmAutor extends javax.swing.JFrame {
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Ocurrio un error: "+ex.getMessage());
     }
-    
+        
+       
     
 }
 
@@ -62,17 +67,24 @@ public class frmAutor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAutor = new javax.swing.JTable();
         btnGuardar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
         btnEliminar1 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DokChampa", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Goudy Old Style", 1, 48)); // NOI18N
         jLabel1.setText("Autor");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 130, 60));
 
-        jLabel2.setText("Identificación:");
+        jLabel2.setText("IDETIFICACIÓN");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jLabel3.setText("Nombre Autor:");
+        jLabel3.setText("NOMBRE AUTOR");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
+        getContentPane().add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 97, -1));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 94, -1));
 
         tblAutor.setModel(modeloAuotr);
         tblAutor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -82,104 +94,77 @@ public class frmAutor extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblAutor);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 320, 237));
+
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user.png"))); // NOI18N
         btnGuardar.setText("GUARDAR");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 130, -1));
 
-        btnSalir.setText("SALIR");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-
+        btnEliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/message.png"))); // NOI18N
         btnEliminar1.setText("ELIMINAR");
         btnEliminar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminar1ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnEliminar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 130, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(jLabel1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtIdentificacion)))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnGuardar)
-                                .addGap(35, 35, 35)
-                                .addComponent(btnEliminar1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSalir))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnGuardar)
-                            .addComponent(btnSalir)
-                            .addComponent(btnEliminar1))
-                        .addGap(29, 29, 29))))
-        );
+        btnSalir.setBackground(new java.awt.Color(255, 102, 102));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cross-remove-sign.png"))); // NOI18N
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 30, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tblAutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAutorMouseClicked
+        int seleccion=tblAutor.rowAtPoint(evt.getPoint());
+        txtIdentificacion.setText(String.valueOf(tblAutor.getValueAt(seleccion,0)));
+        txtNombre.setText(String.valueOf(tblAutor.getValueAt(seleccion,1)));
+        
+    }//GEN-LAST:event_tblAutorMouseClicked
+
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
 
         dispose();
-
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        Autor objAutor= new Autor ();
+    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
+        Autor objAutor=new Autor();
 
+        int au_idautor=Integer.parseInt(txtIdentificacion.getText());
+
+        boolean resultado=objAutor.eliminarAutor(au_idautor);
+
+        if (resultado) {
+            JOptionPane.showMessageDialog(null,"Se eliminó correctamente");
+            modeloAuotr.setNumRows(0);
+            cargarAutor();
+        }else{
+            JOptionPane.showMessageDialog(null,"Ocurrio un error");
+        }
+        txtIdentificacion.setText("");
+        txtNombre.setText("");
+    }//GEN-LAST:event_btnEliminar1ActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+
+        Autor objAutor= new Autor ();
         String nombre=txtNombre.getText();
 
         boolean resultado=objAutor.insertarAutor( nombre);
 
         if (resultado){
-            
-          
+
             JOptionPane.showMessageDialog(null,"Se inserto correctamente");
             modeloAuotr.setNumRows(0);
             cargarAutor();
@@ -190,35 +175,9 @@ public class frmAutor extends javax.swing.JFrame {
         }
         //**Limpio los Campos
         txtIdentificacion.setText("");
-          txtNombre.setText("");
-        
+        txtNombre.setText("");
 
     }//GEN-LAST:event_btnGuardarActionPerformed
-
-    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        Autor objAutor=new Autor();
-        
-        int au_idautor=Integer.parseInt(txtIdentificacion.getText());
-        
-        boolean resultado=objAutor.eliminarAutor(au_idautor);
-       
-        if (resultado) {
-            JOptionPane.showMessageDialog(null,"Se eliminó correctamente");
-            modeloAuotr.setNumRows(0);
-                cargarAutor();
-        }else{
-            JOptionPane.showMessageDialog(null,"Ocurrio un error");
-        }
-        txtIdentificacion.setText("");
-        txtNombre.setText("");
-    }//GEN-LAST:event_btnEliminar1ActionPerformed
-
-    private void tblAutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAutorMouseClicked
-        int seleccion=tblAutor.rowAtPoint(evt.getPoint());
-        txtIdentificacion.setText(String.valueOf(tblAutor.getValueAt(seleccion,0)));
-        txtNombre.setText(String.valueOf(tblAutor.getValueAt(seleccion,1)));
-        
-    }//GEN-LAST:event_tblAutorMouseClicked
    
     
     /**
