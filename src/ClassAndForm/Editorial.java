@@ -20,7 +20,7 @@ public class Editorial extends BibliotecaApp.editorialPOA {
     public boolean insertarEditorial(String ed_editorial) {
          boolean resultado = false;
         try {
-            String sentenciaSql = "insert into editorial (ed_editorial)"
+            String sentenciaSql = "insert into editorial (id_editorial)"
                     + "values('"+ ed_editorial +"')";
             conectar.conectar();
             Statement st = conectar.conex.createStatement();

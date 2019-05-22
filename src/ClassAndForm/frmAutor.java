@@ -203,7 +203,7 @@ public class frmAutor extends javax.swing.JFrame {
         boolean resultado=objAutor.eliminarAutor(au_idautor);
        
         if (resultado) {
-            JOptionPane.showMessageDialog(null,"Se inserto correctamente");
+            JOptionPane.showMessageDialog(null,"Se eliminó correctamente");
             modeloAuotr.setNumRows(0);
                 cargarAutor();
         }else{

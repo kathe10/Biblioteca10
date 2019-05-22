@@ -86,7 +86,7 @@ public class Autor extends BibliotecaApp.autorPOA {
     public boolean eliminarAutor(int au_idautor) {
        boolean resultado = false;
         try {
-            String sentenciaSql = "DELETE FROM autor WHERE au_autor = " + au_idautor;
+            String sentenciaSql = "DELETE FROM autor WHERE au_idautor = " + au_idautor;
             
             conectar.conectar();
             Statement st = conectar.conex.createStatement();

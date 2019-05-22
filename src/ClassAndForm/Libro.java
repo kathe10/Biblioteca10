@@ -86,7 +86,7 @@ public class Libro extends BibliotecaApp.libroPOA{
     public boolean eliminarLibro(int asin) {
          boolean resultado = false;
         try {
-            String sentenciaSql = "DELETE FROM libro WHERE  = " + asin;
+            String sentenciaSql = "DELETE FROM libro WHERE asin = " + asin;
             conectar.conectar();
             Statement st = conectar.conex.createStatement();
             int valor = st.executeUpdate(sentenciaSql);
